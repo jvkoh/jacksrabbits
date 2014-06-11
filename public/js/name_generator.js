@@ -145,7 +145,13 @@ var one_syll_last = new WordList([
     'kip',
     'wax',
     'chease',
-    'pug'
+    'pug',
+    'fred',
+    'bill',
+    'bug',
+    'paw',
+    'pat',
+    'spin',
 ]);
 
 var two_syll_first = new WordList([
@@ -176,7 +182,10 @@ var two_syll_first = new WordList([
     'plester',
     'bulgur',
     'bupple',
-    'chacken'
+    'chacken',
+    'flimsy',
+    'papal',
+    'bunker'
 ]);
 
 var two_syll_last = new WordList([
@@ -195,8 +204,8 @@ var two_syll_last = new WordList([
     'beegall',
     'pasta',
     'bupple',
-    'staðir'
-
+    'staðir',
+    'locker'
 ]);
 
 var three_syll = new WordList([
