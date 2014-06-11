@@ -54,7 +54,7 @@ NameGenerator.prototype.getName = function() {
 
     /** Special Name **/
     if (name_type == 5) {
-        name = this.word_list.getWord();
+        name = this.name_list.getWord();
     }
 
     return name;
@@ -216,12 +216,23 @@ var three_syll = new WordList([
     'zamboni'
 ]);
 
+var secret_names = new WordList([
+    'joyce chen',
+    'jay pee pee pachaygr',
+    'lord of my life',
+    'your great aunt from beligum',
+    'john newman',
+    'hissan nahib',
+    'pj j jay defender of the universe,',
+]);
+
 var ng = new NameGenerator();
 ng.setSyllableList(one_syll_first, 1);
 ng.setSyllableList(one_syll_last, -1);
 ng.setSyllableList(two_syll_first, 2);
 ng.setSyllableList(two_syll_last, -2);
 ng.setSyllableList(three_syll, 3);
+ng.setNameList(secret_names);
 
 $("#name").text(ng.getName());
 
@@ -229,13 +240,3 @@ $("#name").on('click', function() {
     $("#name").text(ng.getName());
 });
 
-
-/**
-joyce chen
-jay pee pee pachaygr
-lord of my life
-your great aunt from beligum
-john newman
-hissan nahib
-pj j jay defender of the universe,
-**/
