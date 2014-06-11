@@ -187,10 +187,12 @@ ng.setSyllableList(two_syll_first, 2);
 ng.setSyllableList(two_syll_last, -2);
 ng.setSyllableList(three_syll, 3);
 
-console.log(ng.getName());
 $("#name").text(ng.getName());
 
-console.log("here");
+$("#name").on('click', function() {
+    $("#name").text(ng.getName());
+});
+
 
 /**
 joyce chen
