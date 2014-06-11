@@ -15,7 +15,7 @@ NameGenerator.prototype.setNameList = function(list) {
 NameGenerator.prototype.getName = function() {
     var name_type, name, first_list;
 
-    name_type = getRandomInt(5,0);
+    name_type = getWeightedOption([22,22,22,22,11.9,0.1]);
     first_list = getRandomInt(2,0);
 
     /** 2 -- 1+1 **/
@@ -39,21 +39,23 @@ NameGenerator.prototype.getName = function() {
         name += this.syllable_lists[-1].getWord();
     }
 
-    /** 1 -- 3 **/
-    if (name_type == 3) {
-        name = this.syllable_lists[1*Math.pow(-1,first_list)].getWord();
-        name += " " + this.syllable_lists[3].getWord();
-    }
-
     /** 2 -- 2+1 **/
-    if (name_type == 4) {
+    if (name_type == 3) {
         name = this.syllable_lists[2*Math.pow(-1,first_list)].getWord();
         name += " " + this.syllable_lists[2].getWord();
         name += this.syllable_lists[-1].getWord();
     }
 
-    /** Special Name **/
+    /** 1 -- 3 **/
+    if (name_type == 4) {
+        name = this.syllable_lists[1*Math.pow(-1,first_list)].getWord();
+        name += " " + this.syllable_lists[3].getWord();
+    }
 
+    /** Special Name **/
+    if (name_type == 5) {
+        name = this.word_list.getWord();
+    }
 
     return name;
 }
@@ -76,6 +78,29 @@ WordList.prototype.getWord = function() {
 /** Auxilliary Functions **/
 function getRandomInt(max, offset) {
     return Math.floor(Math.random() * max) + offset;
+}
+
+function getWeightedOption(weights) {
+    var num, keys, total, count, ans;
+
+    total = 0;
+    weights.forEach(function(weight) {
+        total += weight;
+    });
+
+
+    num = Math.random()*total;
+
+    count = 0;
+    ans = null;
+    weights.forEach(function(weight, index) {
+        count += weight;
+        if (!ans && count >= num) {
+            ans = index;
+        }
+    });
+
+    return ans;
 }
 
 
@@ -169,7 +194,9 @@ var two_syll_last = new WordList([
     'pengin',
     'beegall',
     'pasta',
-    'bupple'
+    'bupple',
+    'staðir'
+
 ]);
 
 var three_syll = new WordList([
