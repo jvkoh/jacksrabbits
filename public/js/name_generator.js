@@ -230,7 +230,7 @@ var two_syll_last = new WordList([
     'pasta',
     'bupple',
     'staðir',
-    'locker'
+    'locker',
     'peggle',
     'pangle',
     'chango',
