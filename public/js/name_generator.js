@@ -15,7 +15,7 @@ NameGenerator.prototype.setNameList = function(list) {
 NameGenerator.prototype.getName = function() {
     var name_type, name, first_list;
 
-    name_type = getWeightedOption([22,22,22,22,11.5,0.5]);
+    name_type = getWeightedOption([22,22,22,22,11.8,0.2]);
     first_list = getRandomInt(2,0);
 
     /** 2 -- 1+1 **/
