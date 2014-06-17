@@ -1,3 +1,7 @@
+var BASE_S3_URL = "https://s3.amazonaws.com/jacksrabbits-pictures/";
+var NUM_IMAGES = 0;
+
+
 /** Name Generator Class **/
 function NameGenerator() {
     this.syllable_lists = [];
@@ -101,6 +105,12 @@ function getWeightedOption(weights) {
     });
 
     return ans;
+}
+
+function generateNewPicture() {
+    var picture_name = "image-" + getRandomInt(NUM_IMAGES, 0);
+    var picture_url = BASE_S3_URL + picture_name + ".jpg";
+    $("#image-tag").attr("src", picture_url);
 }
 
 
@@ -274,9 +284,14 @@ ng.setSyllableList(new WordList(two_syll_last), -2);
 ng.setSyllableList(new WordList(long_syll), 3);
 ng.setNameList(new WordList(secret_names));
 
+if (NUM_IMAGES) {
+    generateNewPicture();
+}
+
 $("#name").text(ng.getName());
 
 $("#name").on('click', function() {
     $("#name").text(ng.getName());
+    generateNewPicture();
 });
 
