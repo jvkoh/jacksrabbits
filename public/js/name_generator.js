@@ -15,7 +15,7 @@ NameGenerator.prototype.setNameList = function(list) {
 NameGenerator.prototype.getName = function() {
     var name_type, name, first_list;
 
-    name_type = getWeightedOption([22,22,22,22,11.9,0.1]);
+    name_type = getWeightedOption([22,22,22,22,11.5,0.5]);
     first_list = getRandomInt(2,0);
 
     /** 2 -- 1+1 **/
@@ -115,10 +115,16 @@ var one_syll_first = new WordList([
     'pork',
     'tamb',
     'chin',
-    'plip',
     'spud',
     'fig',
-    'chip'
+    'chip',
+    'kam',
+    'snug',
+    'pim',
+    'pum',
+    'bunt',
+    'bung',
+    'dunn',
 ]);
 
 var one_syll_last = new WordList([
@@ -152,6 +158,18 @@ var one_syll_last = new WordList([
     'paw',
     'pat',
     'spin',
+    'scrimp',
+    'borg',
+    'bug',
+    'melk',
+    'bat',
+    'spoon',
+    'jock',
+    'rug',
+    'balks',
+    'box',
+    'pup',
+    'björn',
 ]);
 
 var two_syll_first = new WordList([
@@ -185,7 +203,14 @@ var two_syll_first = new WordList([
     'chacken',
     'flimsy',
     'papal',
-    'bunker'
+    'bunker',
+    'chackle',
+    'fussey',
+    'fanger',
+    'pentzl',
+    'pratzl',
+    'knuckle',
+    'shmappi',
 ]);
 
 var two_syll_last = new WordList([
@@ -206,6 +231,11 @@ var two_syll_last = new WordList([
     'bupple',
     'staðir',
     'locker'
+    'peggle',
+    'pangle',
+    'chango',
+    'chatka',
+    'knuckle',
 ]);
 
 var three_syll = new WordList([
@@ -213,7 +243,15 @@ var three_syll = new WordList([
     'mangosteen',
     'iguana',
     'tortilla',
-    'zamboni'
+    'zamboni',
+    'canoli',
+    'papaya',
+]);
+
+var four_syll = new WordList([
+    'fundarstjöri',
+    'avocado',
+    'pumpernickel',
 ]);
 
 var secret_names = new WordList([
@@ -226,12 +264,14 @@ var secret_names = new WordList([
     'pj j jay defender of the universe,',
 ]);
 
+var long_syll = three_syll.concat(four_syll);
+
 var ng = new NameGenerator();
 ng.setSyllableList(one_syll_first, 1);
 ng.setSyllableList(one_syll_last, -1);
 ng.setSyllableList(two_syll_first, 2);
 ng.setSyllableList(two_syll_last, -2);
-ng.setSyllableList(three_syll, 3);
+ng.setSyllableList(long_syll, 3);
 ng.setNameList(secret_names);
 
 $("#name").text(ng.getName());
