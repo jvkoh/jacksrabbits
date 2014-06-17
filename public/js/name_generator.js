@@ -104,7 +104,7 @@ function getWeightedOption(weights) {
 }
 
 
-var one_syll_first = new WordList([
+var one_syll_first = [
     'felt',
     'flip',
     'flop',
@@ -125,9 +125,9 @@ var one_syll_first = new WordList([
     'bunt',
     'bung',
     'dunn',
-]);
+];
 
-var one_syll_last = new WordList([
+var one_syll_last = [
     'toast',
     'ship',
     'pim',
@@ -170,9 +170,9 @@ var one_syll_last = new WordList([
     'box',
     'pup',
     'björn',
-]);
+];
 
-var two_syll_first = new WordList([
+var two_syll_first = [
     'papsy',
     'punkin',
     'bookey',
@@ -211,9 +211,9 @@ var two_syll_first = new WordList([
     'pratzl',
     'knuckle',
     'shmappi',
-]);
+];
 
-var two_syll_last = new WordList([
+var two_syll_last = [
     'spinach',
     'bumbo',
     'perkey',
@@ -236,9 +236,9 @@ var two_syll_last = new WordList([
     'chango',
     'chatka',
     'knuckle',
-]);
+];
 
-var three_syll = new WordList([
+var three_syll = [
     'cabbagepatch',
     'mangosteen',
     'iguana',
@@ -246,15 +246,15 @@ var three_syll = new WordList([
     'zamboni',
     'canoli',
     'papaya',
-]);
+];
 
-var four_syll = new WordList([
+var four_syll = [
     'fundarstjöri',
     'avocado',
     'pumpernickel',
-]);
+];
 
-var secret_names = new WordList([
+var secret_names = [
     'joyce chen',
     'jay pee pee pachaygr',
     'lord of my life',
@@ -262,17 +262,17 @@ var secret_names = new WordList([
     'john newman',
     'hissan nahib',
     'pj j jay defender of the universe,',
-]);
+];
 
 var long_syll = three_syll.concat(four_syll);
 
 var ng = new NameGenerator();
-ng.setSyllableList(one_syll_first, 1);
-ng.setSyllableList(one_syll_last, -1);
-ng.setSyllableList(two_syll_first, 2);
-ng.setSyllableList(two_syll_last, -2);
-ng.setSyllableList(long_syll, 3);
-ng.setNameList(secret_names);
+ng.setSyllableList(new WordList(one_syll_first), 1);
+ng.setSyllableList(new WordList(one_syll_last), -1);
+ng.setSyllableList(new WordList(two_syll_first), 2);
+ng.setSyllableList(new WordList(two_syll_last), -2);
+ng.setSyllableList(new WordList(long_syll), 3);
+ng.setNameList(new WordList(secret_names));
 
 $("#name").text(ng.getName());
 
