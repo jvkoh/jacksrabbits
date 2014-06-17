@@ -1,7 +1,7 @@
 {
   "name": "jacksrabbits",
   "description": "Jacks Rabbits Records",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "author": "Jonathan Koh <jonathanvkoh@gmail.com>",
   "main": "server.js",
   "scripts": {
