@@ -1,4 +1,4 @@
-var NUM_IMAGES = 20;
+var NUM_IMAGES = 37;
 var IMAGE_HOST = "https://s3.amazonaws.com/jacksrabbits-pictures/";
 
 /** Name Generator Class **/
