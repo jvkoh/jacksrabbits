@@ -3,6 +3,8 @@
     <head>
         <title>Jacks Rabbits Name Generator</title>
 
+        <link rel="stylesheet" type="text/css" href="/css/reset.css">
+
         <style>
 
 #name {
@@ -13,20 +15,22 @@
     line-height:36px;
 }
 
-#image {
+.image-container {
+    text-align:center;
+}
+
+#image-tag {
     border: 0;
     padding: 30px 0;
     margin: 0;
-
 }
         </style>
     </head>
 
     <body>
-        <div id="name" style=""></div>
-
-        <div id="image">
-            <img id="image-tag" />
+        <div id="name"></div>
+        <div class="image-container">
+          <img id="image-tag" />
         </div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="/js/name_generator.js"></script>

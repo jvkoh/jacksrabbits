@@ -1,6 +1,5 @@
-var BASE_S3_URL = "https://s3.amazonaws.com/jacksrabbits-pictures/";
-var NUM_IMAGES = 0;
-
+var NUM_IMAGES = 20;
+var IMAGE_HOST = "https://s3.amazonaws.com/jacksrabbits-pictures/";
 
 /** Name Generator Class **/
 function NameGenerator() {
@@ -109,7 +108,7 @@ function getWeightedOption(weights) {
 
 function generateNewPicture() {
     var picture_name = "image-" + getRandomInt(NUM_IMAGES, 0);
-    var picture_url = BASE_S3_URL + picture_name + ".jpg";
+    var picture_url = IMAGE_HOST + picture_name + ".jpg";
     $("#image-tag").attr("src", picture_url);
 }
 
@@ -254,7 +253,7 @@ var three_syll = [
     'iguana',
     'tortilla',
     'zamboni',
-    'canoli',
+    'cannoli',
     'papaya',
 ];
 
@@ -292,6 +291,8 @@ $("#name").text(ng.getName());
 
 $("#name").on('click', function() {
     $("#name").text(ng.getName());
-    generateNewPicture();
+    if (NUM_IMAGES) {
+        generateNewPicture();
+    }
 });
 
